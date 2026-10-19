@@ -8,8 +8,8 @@ export default function Volunteering({ items }) {
     <ul className="grid grid--2">
       {items.map((v, i) => (
         <Reveal as="li" key={v.organization} delay={(i % 2) * 70} className="card org">
-          <div className="org__logo" aria-hidden="true">
-            {v.logo ? <SmartImage src={v.logo} alt="" /> : <span>{v.monogram}</span>}
+          <div className={`org__logo ${v.logo ? 'org__logo--image' : ''}`.trim()} aria-hidden="true">
+            {v.logo ? <SmartImage src={v.logo} alt="" width="192" height="192" /> : <span>{v.monogram}</span>}
           </div>
           <div className="org__body">
             <p className="org__role">{v.role}</p>

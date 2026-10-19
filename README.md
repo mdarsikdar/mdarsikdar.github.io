@@ -108,7 +108,7 @@ To **remove** a photo, delete its entry from `gallery.js`. To reserve a slot bef
 
 **Education cards**: the Islamic University and Dhaka College logos come from their Wikipedia articles and are stored as SVGs in `images-src/logos/`. `npm run images` turns each file there into a small transparent PNG in `public/images/logos/`. To add one (for example an SSC school), drop the file into `images-src/logos/`, run `npm run images`, and set `logo: { src: 'images/logos/<name>.png', alt: '…' }` on the entry in `academic.js`.
 
-**Volunteering cards** show a monogram (e.g. "ASM") because no organisation logos were in the Drive. Add an image under `public/images/logos/` and set `logo: 'images/logos/asm.png'` on that entry in `academic.js`.
+**Volunteering cards** use the organisation logos in `images-src/logos/` (CAP, IAAS IU, ASM IU, NYBB, Dawn of Bioinformatics, IUSC). Raster logos have their white margins trimmed automatically. For a new one, add the file there, run `npm run images`, and set `logo: 'images/logos/<name>.png'` on the entry in `academic.js`. An entry with `logo: null` shows its `monogram` instead.
 
 ---
 

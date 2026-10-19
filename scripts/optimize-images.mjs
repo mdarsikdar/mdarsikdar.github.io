@@ -82,8 +82,11 @@ async function processLogos() {
   await mkdir(outDir, { recursive: true });
 
   for (const file of await listImages(srcDir, LOGO_RE)) {
-    const { name } = parse(file);
-    await sharp(join(srcDir, file), { density: 300 })
+    const { name, ext } = parse(file);
+    let img = sharp(join(srcDir, file), { density: 300 });
+    // Raster logos usually sit on a white canvas; trim it so the mark fills its tile.
+    if (ext.toLowerCase() !== '.svg') img = sharp(await img.trim({ threshold: 18 }).toBuffer());
+    await img
       .resize(192, 192, { fit: 'inside', withoutEnlargement: false })
       .png({ compressionLevel: 9, palette: true })
       .toFile(join(outDir, `${name}.png`));

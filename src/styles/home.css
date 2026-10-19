@@ -207,6 +207,22 @@
   height: 100%;
 }
 
+.org__logo--image {
+  width: 68px;
+  height: 68px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.org__logo--image .smart-img {
+  background: none;
+}
+
+.org__logo--image img {
+  object-fit: contain;
+}
+
 .org__body {
   min-width: 0;
 }
