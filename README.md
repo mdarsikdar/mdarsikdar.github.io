@@ -1,4 +1,4 @@
-# Md. Ataur Rahman Sikdar · Academic Portfolio
+# Md. Ataur Rahman Sikdar · Portfolio
 
 A three-page academic portfolio for a Biotechnology & Genetic Engineering student, built with **React 19 + Vite 7 + React Router 7**. It has an animated DNA double-helix cover, a shared identity panel on every page, research and publication records, and a photo gallery with a lightbox.
 
